@@ -46,6 +46,7 @@ bin=start-tumbleweed.sh
 echo "writing launch script"
 cat > $bin <<- EOM
 #!/bin/bash
+clear
 cd \$(dirname \$0)
 ## unset LD_PRELOAD in case termux-exec is installed
 unset LD_PRELOAD
