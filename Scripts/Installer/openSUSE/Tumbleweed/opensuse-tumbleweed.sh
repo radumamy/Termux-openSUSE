@@ -24,10 +24,11 @@ if [ "$first" != 1 ];then
 		*)
 			echo "unknown architecture"; exit 1 ;;
 		esac
-		wget "https://raw.githubusercontent.com/EXALAB/AnLinux-Resources/master/Rootfs/openSUSE/Tumbleweed/${archurl}/openSUSE-Tumbleweed-rootfs-${archurl}.tar.xz" -O $tarball
+		wget "http://download.opensuse.org/ports/aarch64/tumbleweed/appliances/openSUSE-Tumbleweed-ARM-XFCE.aarch64-rootfs.aarch64.tar.xz -O $tarball
 	fi
 	cur=`pwd`
 	mkdir -p "$folder"
+	mkdir -p "$folder/links"
 	cd "$folder"
 	echo "Decompressing Rootfs, please be patient."
 	proot --link2symlink tar -xJf ${cur}/${tarball} --exclude='dev'||:
@@ -46,6 +47,8 @@ cat > $bin <<- EOM
 cd \$(dirname \$0)
 ## unset LD_PRELOAD in case termux-exec is installed
 unset LD_PRELOAD
+## zypper patch
+export PROOT_L2S_DIR=`pwd`/opensuse-tumbleweed-fs/links
 command="proot"
 command+=" --link2symlink"
 command+=" -0"
