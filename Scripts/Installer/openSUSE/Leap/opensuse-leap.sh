@@ -20,7 +20,7 @@ if [ "$first" != 1 ];then
 		*)
 			echo "unknown architecture"; exit 1 ;;
 		esac
-		wget "http://download.opensuse.org/ports/aarch64/distribution/leap/15.2/appliances/openSUSE-Leap-15.2-ARM-XFCE.aarch64-rootfs.${archurl}.tar.xz" -O $tarball
+		wget "http://download.opensuse.org/ports/aarch64/distribution/leap/15.2/appliances/openSUSE-Leap-15.2-ARM-XFCE.aarch64-rootfs.aarch64.tar.xz" -O $tarball
 	fi
 	cur=`pwd`
 	mkdir -p "$folder"
