@@ -38,7 +38,8 @@ if [ "$first" != 1 ];then
     echo "nameserver 8.8.8.8" > etc/resolv.conf
     echo "nameserver 8.8.4.4" >> etc/resolv.conf
     echo "Patching Yast"
-    sed -i '68,68 s/^/#/' usr/sbin/yast2
+    sed -i '59,59 s/^/#/' usr/sbin/yast2
+    sed -i '66,69 s/^/#/' usr/sbin/yast2
 	cd "$cur"
 fi
 mkdir -p opensuse-tumbleweed-binds
