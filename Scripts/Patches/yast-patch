@@ -1,0 +1,2 @@
+sed -i '59,59 s/^/#/' usr/sbin/yast2
+sed -i '66,69 s/^/#/' usr/sbin/yast2
