@@ -21,16 +21,16 @@ passwd $uservar
 echo " "
 echo " "
 echo "Patching Chromium"
-wget -q https://raw.githubusercontent.com/radumamy/Termux-openSUSE/master/Scripts/Patches/chromium-patch -O /usr/local/bin/
+wget -q https://raw.githubusercontent.com/radumamy/Termux-openSUSE/master/Scripts/Patches/chromium-patch -O /usr/local/bin/chromium-patch 
 chmod +x /usr/local/bin/chromium-patch
 chromium-patch
 echo " "
 echo " "
-wget -q https://raw.githubusercontent.com/radumamy/Termux-openSUSE/master/Scripts/Patches/yast-patch -O /usr/local/bin/
+wget -q https://raw.githubusercontent.com/radumamy/Termux-openSUSE/master/Scripts/Patches/yast-patch -O /usr/local/bin/yast-patch 
 chmod +x /usr/local/bin/yast-patch
 echo " "
 echo "Setting up VNC" 
-wget - q https://raw.githubusercontent.com/radumamy/Termux-openSUSE/master/Scripts/Installer/openSUSE/vnc-server.sh -O ~/
+wget - q https://raw.githubusercontent.com/radumamy/Termux-openSUSE/master/Scripts/Installer/openSUSE/vnc-server.sh -O ~/vnc-server.sh 
 bash vnc-server.sh 
 sed -i '1d' ~/.bash_profile
 echo "exec su - $uservar" >> /usr/local/bin/switch-user
