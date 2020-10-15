@@ -9,8 +9,8 @@ passwd
 echo " "
 echo " "
 echo Create New User 
-echo "Username: " && read uservar
-echo "Full Name: " && read fullnamevar
+read -p 'Username: ' uservar
+read -p 'Full Name: ' fullnamevar
 echo " "
 echo Adding user $uservar
 useradd -m $uservar -c "$fullnamevar"
@@ -28,8 +28,8 @@ echo " "
 echo " "
 wget -q https://raw.githubusercontent.com/radumamy/Termux-openSUSE/master/Scripts/Patches/yast-patch -O /usr/local/bin/yast-patch 
 chmod +x /usr/local/bin/yast-patch
+echo "Setting up VNC, please wait" 
 echo " "
-echo "Setting up VNC" 
 wget -q https://raw.githubusercontent.com/radumamy/Termux-openSUSE/master/Scripts/Installer/openSUSE/vnc-server.sh -O ~/vnc-server.sh 
 bash ~/vnc-server.sh 
 cp -r /root/.vnc /home/$uservar/
