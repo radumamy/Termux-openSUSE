@@ -16,8 +16,10 @@ echo Adding user $uservar
 useradd -m $uservar -c "$fullnamevar"
 echo " "
 echo Please choose a pasaword for user $uservar
-passwd $uservar 
-zypper in -fy sudo > /dev/null 2>&1 
+passwd $uservar  
+echo " " 
+echo "Installing sudo, please wait" 
+zypper in -fy sudo > /dev/null 2>&1
 echo " "
 echo " "
 echo "Patching Chromium"
