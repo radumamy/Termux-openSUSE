@@ -95,6 +95,6 @@ wget -q https://raw.githubusercontent.com/radumamy/Termux-openSUSE/master/Script
 clear
 echo "Starting Setup"
 echo "bash ~/setup
-switch-user; exit" > $folder/root/.bash profile
+switch-user; exit" > $folder/root/.bash_profile
 echo " "
-bash $bin
+bash $bin 
