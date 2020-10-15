@@ -3,21 +3,21 @@ clear
 echo "Welcome to openSUSE Setup"
 echo " "
 echo " "
+zypper al kernel* permissions* > /dev/null 2>&1 
 echo Please choose a pasaword for user root 
 passwd
 echo " "
 echo " "
 echo Create New User 
-echo "Username: " 
-read uservar
-echo "Full Name: " 
-read fullnamevar
+echo "Username: " && read uservar
+echo "Full Name: " && read fullnamevar
 echo " "
 echo Adding user $uservar
 useradd -m $uservar -c "$fullnamevar"
 echo " "
 echo Please choose a pasaword for user $uservar
-passwd $uservar
+passwd $uservar 
+zypper in -fy sudo > /dev/null 2>&1 
 echo " "
 echo " "
 echo "Patching Chromium"
