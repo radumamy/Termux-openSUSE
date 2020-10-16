@@ -23,6 +23,10 @@ echo "Installing sudo, please wait"
 zypper in -fy sudo > /dev/null 2>&1
 echo " "
 echo " "
+echo "Installing PulseAudio, please wait" 
+zypper in --no-recommends -y pavucontrol > /dev/null 2>&1
+echo " "
+echo " "
 echo "Patching Chromium"
 wget -q https://raw.githubusercontent.com/radumamy/Termux-openSUSE/master/Scripts/Patches/chromium-patch -O /usr/local/bin/chromium-patch 
 chmod +x /usr/local/bin/chromium-patch
