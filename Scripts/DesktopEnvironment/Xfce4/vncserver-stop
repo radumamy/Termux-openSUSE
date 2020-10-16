@@ -1,4 +1,4 @@
-export USER=(whoami)
+export USER=$(whoami)
 export HOME=~
 
 vncserver -kill :1
