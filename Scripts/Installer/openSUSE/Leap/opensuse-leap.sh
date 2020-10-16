@@ -45,6 +45,8 @@ cat > $bin <<- EOM
 #!/bin/bash
 clear
 cd \$(dirname \$0)
+pulseaudio -k >>/dev/null 2>&1
+pulseaudio --start >>/dev/null 2>&1 
 ## unset LD_PRELOAD in case termux-exec is installed
 unset LD_PRELOAD
 ## zypper patch
