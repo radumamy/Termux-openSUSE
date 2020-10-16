@@ -27,7 +27,6 @@ echo " "
 echo "To Kill VNC Server just run vncserver-stop"
 echo " "
 echo " "
-echo " "
 
 echo "export DISPLAY=":1"" >> /etc/profile
 source /etc/profile
