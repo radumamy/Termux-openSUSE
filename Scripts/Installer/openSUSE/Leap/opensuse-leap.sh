@@ -26,7 +26,7 @@ if [ "$first" != 1 ];then
 	mkdir -p "$folder"
 	mkdir -p "$folder/links"
 	cd "$folder"
-	echo "Decompressing Rootfs, please be patient."
+	echo "Extracting Rootfs, please be patient."
 	proot --link2symlink tar -xJf ${cur}/${tarball} --exclude='dev'||:
 	
 	echo "Setting up name server"
