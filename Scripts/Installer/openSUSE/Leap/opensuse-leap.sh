@@ -86,8 +86,8 @@ echo "making $bin executable"
 chmod +x $bin
 echo "removing image for some space"
 rm $tarball
-echo "You can now launch openSUSE Leap with the ./${bin} script"
 wget -q https://raw.githubusercontent.com/radumamy/Termux-openSUSE/master/Scripts/Installer/openSUSE/setup -O $folder/root/setup
+echo "You can now use openSUSE Leap. To close it type exit and to launch it type ./${bin}" >> $folder/root/setup
 clear
 echo "Starting Setup"
 echo "bash ~/setup
