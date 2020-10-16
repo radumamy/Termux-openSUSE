@@ -4,6 +4,7 @@ echo "Welcome to openSUSE Setup"
 echo " "
 echo " "
 zypper al kernel* permissions* > /dev/null 2>&1 
+zypper rm -y package-update-indicator > /dev/null 2>&1 
 echo Please choose a pasaword for user root 
 passwd
 echo " "
@@ -37,4 +38,7 @@ bash ~/vnc-server.sh
 cp -r /root/.vnc /home/$uservar/
 sed -i '1d' ~/.bash_profile
 echo "exec su - $uservar" >> /usr/local/bin/switch-user
-chmod +x /usr/local/bin/switch-user
+chmod +x /usr/local/bin/switch-user 
+rm -f ~/vnc-server.sh setup 
+echo "To quit openSUSE type exit and to start it again type ./start*"
+echo " "
