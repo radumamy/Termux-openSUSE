@@ -92,6 +92,11 @@ echo "making $bin executable"
 chmod +x $bin
 echo "removing image for some space"
 rm $tarball
+echo "Enabling audio, modifying idle timeout to 3 minutes" 
+pkg install -y pulseaudio > /dev/null 2>&1 
+echo "load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1 auth-anonymous=1" >> ~/../usr/etc/pulse/default.pa 
+sed -i '/exit-idle-time/d' ~/../usr/etc/pulse/daemon.conf 
+echo "exit-idle-time = 180" >> ~/../usr/etc/pulse/daemon.conf 
 wget -q https://raw.githubusercontent.com/radumamy/Termux-openSUSE/master/Scripts/Installer/openSUSE/setup -O $folder/root/setup
 echo "echo You can now use openSUSE Tumbleweed. To close it type exit and to launch it type ./${bin}" >> $folder/root/setup
 clear
