@@ -1,0 +1,49 @@
+#!/bin/bash
+clear
+echo "Welcome to openSUSE Setup"
+echo " "
+echo " "
+zypper al kernel* permissions* > /dev/null 2>&1 
+echo "Installing Xfce4 DE, please wait" 
+echo " "
+zypper in --no-recommends -y pattern xfce 
+echo Please choose a pasaword for user root 
+passwd
+echo " "
+echo " "
+echo Create New User 
+read -p 'Username: ' uservar
+read -p 'Full Name: ' fullnamevar
+echo " "
+echo Adding user $uservar
+useradd -m $uservar -c "$fullnamevar"
+echo " "
+echo Please choose a pasaword for user $uservar
+passwd $uservar  
+echo " " 
+echo "Installing sudo, please wait" 
+zypper in -fy sudo > /dev/null 2>&1
+echo " "
+echo " "
+echo "Installing PulseAudio, please wait" 
+zypper in --no-recommends -y pavucontrol > /dev/null 2>&1
+echo " "
+echo " "
+echo "Installing Chromium, please wait"
+zypper in -y chromium > /dev/null 2>&1 
+wget -q https://raw.githubusercontent.com/radumamy/Termux-openSUSE/master/Scripts/Patches/chromium-patch -O /usr/local/bin/chromium-patch 
+chmod +x /usr/local/bin/chromium-patch
+chromium-patch
+echo " "
+echo " "
+wget -q https://raw.githubusercontent.com/radumamy/Termux-openSUSE/master/Scripts/Patches/yast-patch -O /usr/local/bin/yast-patch 
+chmod +x /usr/local/bin/yast-patch
+echo "Setting up VNC, please wait" 
+echo " "
+wget -q https://raw.githubusercontent.com/radumamy/Termux-openSUSE/master/Scripts/Installer/openSUSE/vnc-server.sh -O ~/vnc-server.sh 
+bash ~/vnc-server.sh 
+cp -r /root/.vnc /home/$uservar/
+sed -i '1d' ~/.bash_profile
+echo "exec su - $uservar" >> /usr/local/bin/switch-user
+chmod +x /usr/local/bin/switch-user 
+rm -f ~/vnc-server.sh setup 
