@@ -46,6 +46,7 @@ echo "Setting up VNC, please wait"
 echo " "
 wget -q https://raw.githubusercontent.com/radumamy/Termux-openSUSE/master/Scripts/Installer/openSUSE/vnc-server.sh -O ~/vnc-server.sh 
 bash ~/vnc-server.sh 
+zypper cc -a > /dev/null 2>&1 
 cp -r /root/.vnc /home/$uservar/
 sed -i '1d' ~/.bash_profile
 echo "exec su - $uservar" >> /usr/local/bin/switch-user
