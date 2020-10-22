@@ -8,8 +8,9 @@ zypper al kernel* permissions* > /dev/null 2>&1
 echo "Installing Xfce4 DE, please wait" 
 echo " "
 zypper in --no-recommends -y -t pattern xfce 
-zypper in --no-recommends -y xfce4-terminal xfce4-taskmanager nano xdg-user-dirs libyui 
+zypper in --no-recommends -y xfce4-terminal xfce4-taskmanager  
 zypper in -f -y dbus-1 gvfs 
+zypper in --no-recommends -y xdg-user-dirs nano libyui 
 clear
 echo " "
 echo Please choose a password for user root 
