@@ -9,7 +9,7 @@ echo "Installing Xfce4 DE, please wait"
 echo " "
 zypper in --no-recommends -y -t pattern xfce 
 zypper in --no-recommends -y xfce4-terminal xfce4-taskmanager nano xdg-user-dirs libyui 
-zypper in -f -y dbus-1
+zypper in -f -y dbus-1 gvfs 
 clear
 echo " "
 echo Please choose a password for user root 
