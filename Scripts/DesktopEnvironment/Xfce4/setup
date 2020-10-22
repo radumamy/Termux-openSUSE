@@ -3,7 +3,7 @@ clear
 echo "Welcome to openSUSE Setup"
 echo " "
 echo " "
-zypper rm kernel-firmware* > /dev/null 2>&1 
+zypper rm -y kernel-firmware* > /dev/null 2>&1 
 zypper al kernel* permissions* > /dev/null 2>&1 
 echo "Installing Xfce4 DE, please wait" 
 echo " "
