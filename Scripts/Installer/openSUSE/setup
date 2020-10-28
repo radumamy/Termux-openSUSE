@@ -16,7 +16,7 @@ echo " "
 echo Adding user $uservar
 useradd -m $uservar -c "$fullnamevar"
 echo " "
-echo Please choose a pasaword for user $uservar
+echo Please choose a password for user $uservar
 passwd $uservar  
 echo " " 
 echo "Installing sudo, please wait" 
