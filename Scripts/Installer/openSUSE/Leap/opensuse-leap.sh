@@ -51,7 +51,8 @@ pulseaudio --start >>/dev/null 2>&1
 unset LD_PRELOAD
 ## zypper patch
 export PROOT_L2S_DIR=`pwd`/opensuse-leap-fs/links
-command="proot"
+command="proot" 
+command+=" --kill-on-exit" 
 command+=" --link2symlink"
 command+=" -0"
 command+=" -r $folder"
