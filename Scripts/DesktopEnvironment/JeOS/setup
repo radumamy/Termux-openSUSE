@@ -3,8 +3,8 @@ clear
 echo "Welcome to openSUSE Setup"
 echo " "
 echo " "
-zypper rm -y kernel-firmware* > /dev/null 2>&1 
-zypper al kernel* permissions* > /dev/null 2>&1 
+#zypper rm -y kernel-firmware* > /dev/null 2>&1 
+#zypper al kernel* permissions* > /dev/null 2>&1 
 echo Please choose a password for user root 
 passwd
 echo " "
@@ -19,11 +19,11 @@ echo " "
 echo Please choose a password for user $uservar
 passwd $uservar  
 echo " " 
-echo "Installing sudo, please wait" 
-zypper in -fy sudo > /dev/null 2>&1
+#echo "Installing sudo, please wait" 
+#zypper in -fy sudo > /dev/null 2>&1
 echo " "
 echo " "
-zypper cc -a > /dev/null 2>&1 
+#zypper cc -a > /dev/null 2>&1 
 sed -i '1d' ~/.bash_profile
 echo "exec su - $uservar" >> /usr/local/bin/switch-user
 chmod +x /usr/local/bin/switch-user 
