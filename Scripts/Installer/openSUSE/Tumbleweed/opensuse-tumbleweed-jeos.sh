@@ -98,7 +98,7 @@ rm $tarball
 #echo "load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1 auth-anonymous=1" >> ~/../usr/etc/pulse/default.pa 
 #sed -i '/exit-idle-time/d' ~/../usr/etc/pulse/daemon.conf 
 #echo "exit-idle-time = 180" >> ~/../usr/etc/pulse/daemon.conf 
-wget -q https://raw.githubusercontent.com/radumamy/Termux-openSUSE/master/Scripts/DesktopEnvironment/Xfce4/setup -O $folder/root/setup
+wget -q https://raw.githubusercontent.com/radumamy/Termux-openSUSE/master/Scripts/DesktopEnvironment/JeOS/setup -O $folder/root/setup
 echo "echo You can now use openSUSE Tumbleweed. To close it type exit and to launch it type ./${bin}" >> $folder/root/setup
 clear
 echo "Starting Setup"
