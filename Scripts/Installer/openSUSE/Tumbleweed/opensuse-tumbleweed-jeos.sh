@@ -31,7 +31,7 @@ if [ "$first" != 1 ];then
 	mkdir -p "$folder/links"
 	cd "$folder"
 	echo "Extracting Rootfs, please be patient."
-	proot --link2symlink tar -xJf ${cur}/${tarball} --exclude='dev'||:
+	proot --link2symlink bsdtar -xJf ${cur}/${tarball} --exclude='dev'||:
 	
 	echo "Setting up name server"
 	echo "127.0.0.1 localhost" > etc/hosts
