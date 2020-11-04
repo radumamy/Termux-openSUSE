@@ -3,8 +3,8 @@ clear
 echo "Welcome to openSUSE Setup"
 echo " "
 echo " "
-#zypper rm -y kernel-firmware* > /dev/null 2>&1 
-#zypper al kernel* permissions* > /dev/null 2>&1 
+zypper rm -y kernel-firmware* 
+zypper al kernel* permissions* 
 echo Please choose a password for user root 
 passwd
 echo " "
