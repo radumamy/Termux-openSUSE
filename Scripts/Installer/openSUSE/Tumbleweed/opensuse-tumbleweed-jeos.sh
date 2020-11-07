@@ -24,7 +24,8 @@ if [ "$first" != 1 ];then
 		*)
 			echo "unknown architecture"; exit 1 ;;
 		esac
-		wget "http://download.opensuse.org/ports/aarch64/tumbleweed/appliances/openSUSE-Tumbleweed-ARM-JeOS.aarch64-rootfs.aarch64.tar.xz" -O $tarball
+                wget "http://download.opensuse.org/ports/aarch64/distribution/leap/15.2/appliances/opensuse-leap-image.aarch64-lxc.tar.xz" -O $tarball
+#		wget "http://download.opensuse.org/ports/aarch64/tumbleweed/appliances/openSUSE-Tumbleweed-ARM-JeOS.aarch64-rootfs.aarch64.tar.xz" -O $tarball
 	fi
 	cur=`pwd`
 	mkdir -p "$folder"
