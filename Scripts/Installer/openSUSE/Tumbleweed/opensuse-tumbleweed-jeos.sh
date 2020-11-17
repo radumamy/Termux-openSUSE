@@ -58,7 +58,7 @@ addresolvconf ()
 {
   android=\$(getprop ro.build.version.release)
   if [ \${android%%.*} -lt 8 ]; then
-  [ \$(command -v getprop) ] && getprop | sed -n -e 's/^\[net\.dns.\]: \[\(.*\)\]/\1/p' | sed '/^\s*$/d' | sed 's/^/nameserver /' > /data/data/com.termux/files/home/opensuse-tumbleweed-fs/etc/resolv.conf
+  [ \$(command -v getprop) ] && getprop | sed -n -e 's/^\[net\.dns.\]: \[\(.*\)\]/\1/p' | sed '/^\s*$/d' | sed 's/^/nameserver /' > \$HOME/opensuse-tumbleweed-fs/etc/resolv.conf
   fi
 }
 addresolvconf 
