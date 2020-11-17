@@ -36,11 +36,11 @@ if [ "$first" != 1 ];then
 	
 	echo "Setting up name server"
 	echo "127.0.0.1 localhost" > etc/hosts
-    echo "nameserver 8.8.8.8" > etc/resolv.conf
-    echo "nameserver 8.8.4.4" >> etc/resolv.conf
-    echo "Patching Yast"
-    sed -i '59,59 s/^/#/' usr/sbin/yast2
-    sed -i '66,69 s/^/#/' usr/sbin/yast2
+#    echo "nameserver 8.8.8.8" > etc/resolv.conf
+#    echo "nameserver 8.8.4.4" >> etc/resolv.conf
+#    echo "Patching Yast"
+#    sed -i '59,59 s/^/#/' usr/sbin/yast2
+#    sed -i '66,69 s/^/#/' usr/sbin/yast2
 	cd "$cur"
 fi
 mkdir -p opensuse-tumbleweed-binds
@@ -50,10 +50,18 @@ cat > $bin <<- EOM
 #!/bin/bash
 clear
 cd \$(dirname \$0)
-pulseaudio -k >>/dev/null 2>&1
-pulseaudio --start >>/dev/null 2>&1 
+#pulseaudio -k >>/dev/null 2>&1
+#pulseaudio --start >>/dev/null 2>&1 
 ## unset LD_PRELOAD in case termux-exec is installed
 unset LD_PRELOAD
+addresolvconf ()
+{
+  android=\$(getprop ro.build.version.release)
+  if [ \${android%%.*} -lt 8 ]; then
+  [ \$(command -v getprop) ] && getprop | sed -n -e 's/^\[net\.dns.\]: \[\(.*\)\]/\1/p' | sed '/^\s*$/d' | sed 's/^/nameserver /' > /data/data/com.termux/files/home/opensuse-tumbleweed-fs/etc/resolv.conf
+  fi
+}
+addresolvconf 
 ## zypper patch
 export PROOT_L2S_DIR=`pwd`/opensuse-tumbleweed-fs/links
 command="proot" 
