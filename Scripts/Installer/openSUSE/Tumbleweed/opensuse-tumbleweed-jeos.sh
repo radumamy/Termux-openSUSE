@@ -64,7 +64,7 @@ unset LD_PRELOAD
 #addresolvconf 
 ## zypper patch
 export PROOT_L2S_DIR=`pwd`/opensuse-tumbleweed-fs/links
-command="exec proot" 
+command="proot" 
 command+=" --kill-on-exit" 
 command+=" --link2symlink"
 command+=" -0"
