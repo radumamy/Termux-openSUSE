@@ -3,4 +3,4 @@
 export PULSE_SERVER=127.0.0.1
 XAUTHORITY=$HOME/.Xauthority
 export XAUTHORITY                                       
-dbus-launch --exit-with-session startxfce4 &
+dbus-launch startxfce4 &
