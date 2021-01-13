@@ -10,7 +10,7 @@ echo " "
 zypper in --no-recommends -y -t pattern xfce 
 zypper in --no-recommends -y xfce4-terminal xfce4-taskmanager  
 zypper in -f -y dbus-1 gvfs 
-zypper in --no-recommends -y xdg-user-dirs nano libyui-qt-pkg14  
+zypper in --no-recommends -y xdg-user-dirs nano wget 
 clear
 echo " "
 echo Please choose a password for user root 
