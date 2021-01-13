@@ -24,7 +24,8 @@ if [ "$first" != 1 ];then
 		*)
 			echo "unknown architecture"; exit 1 ;;
 		esac
-		wget "http://download.opensuse.org/ports/aarch64/tumbleweed/appliances/openSUSE-Tumbleweed-ARM-JeOS.aarch64-rootfs.aarch64.tar.xz" -O $tarball
+                wget "http://download.opensuse.org/ports/aarch64/tumbleweed/appliances/opensuse-tumbleweed-image.aarch64-lxc.tar.xz" -O $tarball
+#		wget "http://download.opensuse.org/ports/aarch64/tumbleweed/appliances/openSUSE-Tumbleweed-ARM-JeOS.aarch64-rootfs.aarch64.tar.xz" -O $tarball
 	fi
 	cur=`pwd`
 	mkdir -p "$folder"
@@ -37,9 +38,9 @@ if [ "$first" != 1 ];then
 	echo "127.0.0.1 localhost" > etc/hosts
     echo "nameserver 8.8.8.8" > etc/resolv.conf
     echo "nameserver 8.8.4.4" >> etc/resolv.conf
-    echo "Patching Yast"
-    sed -i '59,59 s/^/#/' usr/sbin/yast2
-    sed -i '66,69 s/^/#/' usr/sbin/yast2
+#    echo "Patching Yast"
+#    sed -i '59,59 s/^/#/' usr/sbin/yast2
+#    sed -i '66,69 s/^/#/' usr/sbin/yast2
 	cd "$cur"
 fi
 mkdir -p opensuse-tumbleweed-binds
@@ -49,8 +50,8 @@ cat > $bin <<- EOM
 #!/bin/bash
 clear
 cd \$(dirname \$0)
-pulseaudio -k >>/dev/null 2>&1
-pulseaudio --start >>/dev/null 2>&1 
+#pulseaudio -k >>/dev/null 2>&1
+#pulseaudio --start >>/dev/null 2>&1 
 ## unset LD_PRELOAD in case termux-exec is installed
 unset LD_PRELOAD
 ## zypper patch
