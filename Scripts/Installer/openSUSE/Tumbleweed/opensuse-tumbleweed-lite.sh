@@ -79,7 +79,7 @@ command+=" HOME=/root"
 command+=" PATH=/usr/local/sbin:/usr/local/bin:/bin:/usr/bin:/sbin:/usr/sbin:/usr/games:/usr/local/games"
 command+=" TERM=\$TERM"
 command+=" LANG=C.UTF-8"
-command+=" /bin/bash --login"
+command+=" /bin/bash --login /root/.proot_startup"
 com="\$@"
 if [ -z "\$1" ];then
     exec \$command
