@@ -99,6 +99,6 @@ echo "echo You can now use openSUSE Leap. To close it type exit and to launch it
 clear
 echo "Starting Setup"
 echo "bash ~/setup
-switch-user; exit" > $folder/root/.bash_profile
+switch-user; exit" > $folder/root/.proot_startup
 echo " "
 bash $bin 
