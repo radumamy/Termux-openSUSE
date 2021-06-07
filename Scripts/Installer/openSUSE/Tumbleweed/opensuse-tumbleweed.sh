@@ -103,6 +103,6 @@ echo "echo You can now use openSUSE Tumbleweed. To close it type exit and to lau
 clear
 echo "Starting Setup"
 echo "bash ~/setup
-switch-user; exit" > $folder/root/.bash_profile
+switch-user; exit" > $folder/root/.proot_startup
 echo " "
 bash $bin 
