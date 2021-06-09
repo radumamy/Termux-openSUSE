@@ -23,8 +23,8 @@ if [ "$first" != 1 ];then
 		wget "http://download.opensuse.org/ports/aarch64/distribution/leap/15.2/appliances/openSUSE-Leap-15.2-ARM-XFCE.aarch64-rootfs.aarch64.tar.xz" -O $tarball
 	fi
 	cur=`pwd`
-	mkdir -p "$folder"
 	mkdir -p "$folder/links"
+        export PROOT_L2S_DIR=${cur}/${folder}/links
 	cd "$folder"
 	echo "Extracting Rootfs, please be patient."
 	proot --link2symlink tar -xJf ${cur}/${tarball} --exclude='dev'||:
