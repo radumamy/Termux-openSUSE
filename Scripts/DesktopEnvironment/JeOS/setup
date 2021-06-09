@@ -24,7 +24,7 @@ echo " "
 echo " "
 echo " "
 #zypper cc -a > /dev/null 2>&1 
-sed -i '1d' ~/.bash_profile
+sed -i '1d' ~/.proot_startup 
 echo "exec su - $uservar" >> /usr/local/bin/switch-user
 chmod +x /usr/local/bin/switch-user 
 clear 
