@@ -27,8 +27,8 @@ if [ "$first" != 1 ];then
                 wget "http://download.opensuse.org/ports/aarch64/distribution/leap/15.2/appliances/opensuse-leap-image.aarch64-lxc.tar.xz" -O $tarball
 	fi
 	cur=`pwd`
-	mkdir -p "$folder"
 	mkdir -p "$folder/links"
+        export PROOT_L2S_DIR=${cur}/${folder}/links
 	cd "$folder"
 	echo "Extracting Rootfs, please be patient."
 	proot --link2symlink bsdtar -xJf ${cur}/${tarball} --exclude='dev'||:
